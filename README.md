@@ -59,7 +59,7 @@ normalizer = Normalizer().isinstance_str().strip().casefold().min_length(3)
 rapidfuzz_dict = RapidFuzzDict(data_dict, normalizer=normalizer, score_cutoff=90)
 
 rapidfuzz_dict.fuzzy_contains('Gondor')  # False
-rapidfuzz_dict.fuzzy_get('Ustralia')  # True
+rapidfuzz_dict.fuzzy_contains('Ustralia')  # True
 rapidfuzz_dict.fuzzy_get('Ustralia')  # ( 'Australia', 'AUS', )
 rapidfuzz_dict.get_fuzzy_scores('Austraia')  # [ ( 'AUS', 94.11764705882352, 'Australia', ), ( 'AUT', 93.33333333333333, 'Austria', ), ( 'ABW', None, 'Aruba', ), ( 'AFG', None, 'Afghanistan', ), ... ]
 
